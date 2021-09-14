@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import createYouTube from 'react-youtube-component';
+import React from 'react';
+import YouTube from 'react-youtube';
+import { useEffect, useState } from 'react';
+import { Switch, Route, Link } from 'react';
+
 
 function App() {
+
+  const createYouTube = require('react-youtube-component');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Hello
-        </a>
-      </header>
+      Hello
     </div>
   );
 }
