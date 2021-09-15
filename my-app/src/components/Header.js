@@ -14,7 +14,7 @@ export default function Header() {
                 <MenuIcon />
                 <img
                     className="header__logo"
-                    src="https://static.toiimg.com/photo/58623495.cms" alt="" />
+                    src="https://bestanimations.com/media/chemistry/2002718273chemistry-atom-proton-electron-animation-17.gif" alt="" />
             </div>
             <div className='header__input'>
                 <input type="text" />

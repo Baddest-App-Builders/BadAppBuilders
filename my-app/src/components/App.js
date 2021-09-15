@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "./Searchbar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
-
+import Header from "./Header";
 import VideoDetail from "../components/VideoDetail";
 import Background from "./Background";
 import "../style/app.css";
@@ -33,9 +33,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "1em" }}>
+      <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
-        <SearchBar handleFormSubmit={this.handleSubmit} />
+        {/* <SearchBar handleFormSubmit={this.handleSubmit} /> */}
         <img className="solarlogo" src={logo} alt="logo" />
         <div className="ui grid">
           <div className="ui row">
@@ -47,6 +47,8 @@ class App extends React.Component {
                 handleVideoSelect={this.handleVideoSelect}
                 videos={this.state.videos}
               />
+
+              <Header />
             </div>
           </div>
         </div>
