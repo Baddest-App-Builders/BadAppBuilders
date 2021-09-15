@@ -3,6 +3,8 @@ import SearchBar from './Searchbar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import Sidebar from './Sidebar';
+import RecommendedVideos from './RecommendedVideos';
 
 class App extends React.Component {
     state = {
@@ -40,6 +42,10 @@ render() {
                 <div className="ui row">
                     <div className="eleven wide column">
                         <VideoDetail video={this.state.selectedVideo} />
+                    </div>
+                    <div className="app__page">
+                        <Sidebar />
+                        <RecommendedVideos />
                     </div>
                     <div className="five wide column">
                         <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos} />
