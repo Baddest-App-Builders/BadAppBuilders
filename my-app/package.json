@@ -12,7 +12,8 @@
     "react-scripts": "4.0.3",
     "react-youtube": "^7.13.1",
     "react-youtube-component": "^1.0.23",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "youtube-api-search": "0.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
