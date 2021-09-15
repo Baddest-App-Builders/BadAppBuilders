@@ -2,7 +2,11 @@ import React from "react";
 import SearchBar from "./Searchbar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
+
 import VideoDetail from "../components/VideoDetail";
+import Background from "./Background";
+import "../style/app.css";
+import logo from "../images/solar_system_2d.gif";
 
 class App extends React.Component {
   state = {
@@ -30,7 +34,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container" style={{ marginTop: "1em" }}>
+        <Background />
         <SearchBar handleFormSubmit={this.handleSubmit} />
+        <img className="solarlogo" src={logo} alt="logo" />
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">

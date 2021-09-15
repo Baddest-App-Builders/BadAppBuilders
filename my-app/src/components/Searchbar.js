@@ -1,8 +1,9 @@
 import React from "react";
+import "../style/app.css";
 
 class Searchbar extends React.Component {
   state = {
-    term: "Default text",
+    term: "Search Video",
   };
   handleChange = (event) => {
     this.setState({
