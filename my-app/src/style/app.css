@@ -23,7 +23,10 @@ canvas {
   text-transform: none;
 }
 .recommendedVideos {
-  flex: 0.8;
+  display: flex;
+  justify-content: space-around;
+  flex: wrap;
+  align-items: flex-end;
   background-color: whitesmoke;
   padding: 40px, 20px;
   padding-bottom: 0;
@@ -41,9 +44,27 @@ canvas {
   width: 250px;
 }
 .recommendedVideos_videos {
+  display: flex;
+  flex-wrap: wrap;
 }
-.solarlogo {
-  position: relative;
-  width: 10px;
-  height: 10px;
+.videoCard_info {
+  display: flex;
+  margin-top: 10px;
+  padding-right: 15px;
+}
+.videoCard_text {
+  margin-left: 15px;
+}
+
+#video {
+  display: none;
+}
+
+#video.showVideo {
+  display: block;
+  border: 10px solid green;
+  position: absolute;
+  z-index: 10;
+  top: 200px;
+  left: 50%;
 }

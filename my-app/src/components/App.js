@@ -7,11 +7,13 @@ import VideoDetail from "../components/VideoDetail";
 import Background from "./Background";
 import "../style/app.css";
 import logo from "../images/solar_system_2d.gif";
+import RecommendedVideos from "./RecommendedVideos";
 
 class App extends React.Component {
   state = {
     videos: [],
     selectedVideo: null,
+    show: true,
   };
 
   handleSubmit = async (termFromSearchBar) => {
@@ -24,6 +26,7 @@ class App extends React.Component {
 
     this.setState({
       videos: response.data.items,
+      show: false,
     });
   };
 
@@ -33,10 +36,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "1em" }}>
+      <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
+
+        <div id="video" className={this.state.show && "showVideo"}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fwfT6k5kD4s"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
         <SearchBar handleFormSubmit={this.handleSubmit} />
-        <img className="solarlogo" src={logo} alt="logo" />
+        {/* <img className="solarlogo" src={logo} alt="logo" /> */}
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
@@ -50,6 +65,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+        <RecommendedVideos />
       </div>
     );
   }
