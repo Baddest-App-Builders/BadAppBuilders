@@ -43,27 +43,40 @@ class App extends React.Component {
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
         <div className="top">
-          <Header />
-          <SearchBar handleFormSubmit={this.handleSubmit} />
+          <Header handleFormSubmit={this.handleSubmit} />
+          {/* <SearchBar  /> */}
         </div>
 
         <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
-              <Sidebar />
-            </div>
-            <div id="video" className={this.state.show && "showVideo"}>
-              <RecommendedVideos />
-            </div>
-            <div className="five wide column">
-              <VideoList
-                handleVideoSelect={this.handleVideoSelect}
-                videos={this.state.videos}
-              />
-            </div>
+          {/* <div className="ui row"> */}
+          <div className="eleven wide column">
+            <VideoDetail video={this.state.selectedVideo} />
+          </div>
+          <div className="five wide column">
+            <VideoList
+              handleVideoSelect={this.handleVideoSelect}
+              videos={this.state.videos}
+            />
 
-            <div className="app__page"></div>
+            <Header />
+
+            <div className="ui row">
+              <div className="eleven wide column">
+                <VideoDetail video={this.state.selectedVideo} />
+                <Sidebar />
+              </div>
+              <div id="video" className={this.state.show && "showVideo"}>
+                <RecommendedVideos />
+              </div>
+              <div className="five wide column">
+                <VideoList
+                  handleVideoSelect={this.handleVideoSelect}
+                  videos={this.state.videos}
+                />
+              </div>
+
+              <div className="app__page"></div>
+            </div>
           </div>
         </div>
       </div>
