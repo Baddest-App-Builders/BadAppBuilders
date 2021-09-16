@@ -38,21 +38,21 @@ class App extends React.Component {
         {/* <SearchBar handleFormSubmit={this.handleSubmit} /> */}
         <img className="solarlogo" src={logo} alt="logo" />
         <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
-            </div>
-            <div className="five wide column">
-              <VideoList
-                handleVideoSelect={this.handleVideoSelect}
-                videos={this.state.videos}
-              />
+          {/* <div className="ui row"> */}
+          <div className="eleven wide column">
+            <VideoDetail video={this.state.selectedVideo} />
+          </div>
+          <div className="five wide column">
+            <VideoList
+              handleVideoSelect={this.handleVideoSelect}
+              videos={this.state.videos}
+            />
 
-              <Header />
-            </div>
+            <Header />
           </div>
         </div>
       </div>
+      // </div >
     );
   }
 }
