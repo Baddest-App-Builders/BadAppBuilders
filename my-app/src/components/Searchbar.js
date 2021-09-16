@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
+import "../style/app.css";
 
-class SearchBar extends React.Component {
-    state = {
-        term: 'Default text'
-    };
-    handleChange = (event) => {
-        this.setState({
-            term: event.target.value
-        });
-    };
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.handleFormSubmit(this.state.term);
-    }
+class Searchbar extends React.Component {
+  state = {
+    term: "Search Video",
+  };
+  handleChange = (event) => {
+    this.setState({
+      term: event.target.value,
+    });
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.handleFormSubmit(this.state.term);
+  };
 
     render() {
         return (
@@ -27,4 +28,4 @@ class SearchBar extends React.Component {
         )
     }
 }
-export default SearchBar;
+export default Searchbar;

@@ -14,7 +14,8 @@ import '../style/Sidebar.css';
 function Sidebar() {
     return (
       <div className="sidebar">
-        <SidebarRow Icon={HomeIcon} title="Home"/>
+        <SidebarRow />
+       {/*} <SidebarRow Icon={HomeIcon} title="Home"/>
         <SidebarRow Icon={WhatshotIcon} title="Trending"/>
         <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions"/>
         <SidebarRow Icon={VideoLibraryIcon} title="VideoLibrary"/>
@@ -22,7 +23,7 @@ function Sidebar() {
         <SidebarRow Icon={PersonalVideoIcon} title="PersonalVideo"/>  
         <SidebarRow Icon={WatchLaterIcon} title="WatchLater"/>
         <SidebarRow Icon={DuoIcon} title="Duo"/>
-        <SidebarRow Icon={MoreIcon} title="More"/>  
+    <SidebarRow Icon={MoreIcon} title="More"/>  */}
       </div>
     );
 }
