@@ -1,9 +1,12 @@
-import React from "react";
+import React from 'react';
+import '../style/RecommendedVideos.css';
 import "../style/app.css";
 import VideoCard from "./VideoCard";
 
-const RecommendedVideos = () => {
-  return (
+function RecommendedVideos() {
+    return (
+     
+ 
     <div className="recommendedVideos">
       <VideoCard
         title="Tesla AI Day Highlights | Lex Fridman"

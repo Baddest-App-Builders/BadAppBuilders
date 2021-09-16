@@ -10,7 +10,6 @@ const VideoCard = ({
   channelImage,
   timestamp,
 }) => {
-  // image, title, channel, views, channelImage, timestamp
   return (
     <div className="videoCard">
       <img className="videoCard_thumbnail" src={image} alt="" />
