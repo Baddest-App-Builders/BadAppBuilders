@@ -1,6 +1,11 @@
-.sidebarRow {
+.SidebarRow {
   display: flex;
+  flex: 0.2 1;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  border: 1px solid red;
   align-items: center;
-  flex-wrap: wrap;
-  vertical-align: auto;
+  width: 180px;
 }

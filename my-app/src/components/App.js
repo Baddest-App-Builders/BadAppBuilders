@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "./Searchbar";
+// import SearchBar from "./Searchbar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
@@ -42,38 +42,29 @@ class App extends React.Component {
     return (
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
-        <div className="top">
-          <Header handleFormSubmit={this.handleSubmit} />
-          {/* <SearchBar  /> */}
-        </div>
+        <Header handleFormSubmit={this.handleSubmit} />
+        {/* <SearchBar  /> */}
 
         <div className="ui grid">
           {/* <div className="ui row"> */}
           <div className="eleven wide column">
             <VideoDetail video={this.state.selectedVideo} />
           </div>
+
           <div className="five wide column">
             <VideoList
               handleVideoSelect={this.handleVideoSelect}
               videos={this.state.videos}
             />
 
-            <Header />
-
             <div className="ui row">
-              <div className="eleven wide column">
-                <VideoDetail video={this.state.selectedVideo} />
+              <div className="sid">
                 <Sidebar />
               </div>
               <div id="video" className={this.state.show && "showVideo"}>
                 <RecommendedVideos />
               </div>
-              <div className="five wide column">
-                <VideoList
-                  handleVideoSelect={this.handleVideoSelect}
-                  videos={this.state.videos}
-                />
-              </div>
+              <div className="five wide column"></div>
 
               <div className="app__page"></div>
             </div>
