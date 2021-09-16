@@ -1,7 +1,13 @@
 canvas {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 150% !important;
+}
+element.style {
+  width: 100%;
+  height: 150% !important;
+  background-color: rgb(0, 0, 0);
+  pointer-events: initial;
 }
 .ui.segment {
   position: relative;
@@ -24,10 +30,9 @@ canvas {
 }
 .recommendedVideos {
   display: flex;
+  position: relative;
   justify-content: space-around;
-  flex: wrap;
-  align-items: flex-end;
-  background-color: whitesmoke;
+  flex-wrap: wrap;
   padding: 40px, 20px;
   padding-bottom: 0;
 }
@@ -42,6 +47,7 @@ canvas {
 .videoCard_thumbnail {
   height: 140px;
   width: 250px;
+  border: 1px solid aqua;
 }
 .recommendedVideos_videos {
   display: flex;
@@ -61,10 +67,22 @@ canvas {
 }
 
 #video.showVideo {
-  display: block;
-  border: 10px solid green;
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   z-index: 10;
-  top: 200px;
-  left: 50%;
+}
+h4 {
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  line-height: 1.28571429em;
+  margin: calc(2rem - 0.14285714em) 0 1rem;
+  font-weight: 700;
+  padding: 0;
+  color: white;
+}
+p {
+  margin: 0 0 1em;
+  line-height: 1.4285em;
+  color: white;
 }

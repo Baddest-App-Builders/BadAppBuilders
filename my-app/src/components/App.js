@@ -8,12 +8,12 @@ import RecommendedVideos from "./RecommendedVideos";
 import Header from "./Header";
 import Background from "./Background";
 import "../style/app.css";
-import logo from "../images/solar_system_2d.gif";
 
 class App extends React.Component {
   state = {
     videos: [],
     selectedVideo: null,
+    show: true,
   };
 
   handleSubmit = async (termFromSearchBar) => {
@@ -22,13 +22,17 @@ class App extends React.Component {
         q: termFromSearchBar,
       },
     });
-
     console.log(Date());
 
     this.setState({
       videos: response.data.items,
+      show: false,
     });
   };
+  // state = {
+  //     videos: [],
+  //     selectedVideo: null
+  // };
 
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
@@ -38,13 +42,19 @@ class App extends React.Component {
     return (
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
-        <Header />
-        {/* <SearchBar handleFormSubmit={this.handleSubmit} /> */}
+        <div className="top">
+          <Header />
+          <SearchBar handleFormSubmit={this.handleSubmit} />
+        </div>
 
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
               <VideoDetail video={this.state.selectedVideo} />
+              <Sidebar />
+            </div>
+            <div id="video" className={this.state.show && "showVideo"}>
+              <RecommendedVideos />
             </div>
             <div className="five wide column">
               <VideoList
@@ -52,10 +62,8 @@ class App extends React.Component {
                 videos={this.state.videos}
               />
             </div>
-            <div className="app__page">
-              <Sidebar />
-              <RecommendedVideos />
-            </div>
+
+            <div className="app__page"></div>
           </div>
         </div>
       </div>
