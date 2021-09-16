@@ -1,5 +1,5 @@
 import React from "react";
-// import SearchBar from "./Searchbar";
+import Searchbar from "./Searchbar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
@@ -29,10 +29,6 @@ class App extends React.Component {
       show: false,
     });
   };
-  // state = {
-  //     videos: [],
-  //     selectedVideo: null
-  // };
 
   handleVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
@@ -43,13 +39,13 @@ class App extends React.Component {
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
 
-        {/* <SearchBar  /> */}
-        <Header handleFormSubmit={this.handleSubmit} />
+        <Searchbar handleFormSubmit={this.handleSubmit} />
+
         <div className="ui grid">
-          {/* <div className="ui row"> */}
+
           <div className="eleven wide column">
             <VideoDetail video={this.state.selectedVideo} />
-
+            {/* <Header /> */}
           </div>
 
           <div className="five wide column">
@@ -60,10 +56,7 @@ class App extends React.Component {
 
             <div className="ui row">
 
-              <div className="eleven wide column">
 
-                <VideoDetail video={this.state.selectedVideo} />
-              </div>
 
               <div id="video" className={this.state.show && "showVideo"}>
                 <RecommendedVideos />

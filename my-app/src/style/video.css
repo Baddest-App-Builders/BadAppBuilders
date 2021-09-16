@@ -1,18 +1,17 @@
 .video-item {
-    display: flex !important;
-    align-items: center !important;
-    cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer;
 }
 
 .video-item.item img {
-    max-width: 200px;
-    max-height: 250px ;
+  max-width: 200px;
+  max-height: 250px;
 }
 .header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
 }
 .header__logo{
   height: 100px;
@@ -43,12 +42,4 @@
   flex-shrink: 0;
   user-select: none;
 }
-.ui.column.grid>[class*="five wide"].column, .ui.grid>.column.row>[class*="five wide"].column, .ui.grid>.row>[class*="five wide"].column, .ui.grid>[class*="five wide"].column {
-  width: 31.25%!important;
-  width:-webkit-fill-available!important;
-  
-}
-.ui.column.grid>[class*="eleven wide"].column, .ui.grid>.column.row>[class*="eleven wide"].column, .ui.grid>.row>[class*="eleven wide"].column, .ui.grid>[class*="eleven wide"].column {
-  width: 68.75%!important;
-  width:-webkit-fill-available!important;
-}
+
