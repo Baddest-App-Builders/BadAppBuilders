@@ -2,8 +2,10 @@ import React from "react";
 import SearchBar from "./Searchbar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
+import VideoDetail from "./VideoDetail";
+import Sidebar from "./Sidebar";
+import RecommendedVideos from "./RecommendedVideos";
 import Header from "./Header";
-import VideoDetail from "../components/VideoDetail";
 import Background from "./Background";
 import "../style/app.css";
 import logo from "../images/solar_system_2d.gif";
@@ -20,6 +22,7 @@ class App extends React.Component {
         q: termFromSearchBar,
       },
     });
+
     console.log(Date());
 
     this.setState({
@@ -35,9 +38,11 @@ class App extends React.Component {
     return (
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
+        <Header />
         {/* <SearchBar handleFormSubmit={this.handleSubmit} /> */}
-        <img className="solarlogo" src={logo} alt="logo" />
+
         <div className="ui grid">
+<<<<<<< HEAD
           {/* <div className="ui row"> */}
           <div className="eleven wide column">
             <VideoDetail video={this.state.selectedVideo} />
@@ -49,6 +54,22 @@ class App extends React.Component {
             />
 
             <Header />
+=======
+          <div className="ui row">
+            <div className="eleven wide column">
+              <VideoDetail video={this.state.selectedVideo} />
+            </div>
+            <div className="five wide column">
+              <VideoList
+                handleVideoSelect={this.handleVideoSelect}
+                videos={this.state.videos}
+              />
+            </div>
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos />
+            </div>
+>>>>>>> 33daedd277ad0f75ced8d1955d085174d2a1e790
           </div>
         </div>
       </div>

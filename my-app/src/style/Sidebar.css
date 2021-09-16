@@ -1,0 +1,6 @@
+.app__page {
+    display: flex
+}
+.sidebar {
+    flex: 0.2;
+}
