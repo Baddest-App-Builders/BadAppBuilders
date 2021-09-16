@@ -38,27 +38,16 @@ class App extends React.Component {
     return (
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
         <Background />
-        <Header />
+
+
         {/* <SearchBar handleFormSubmit={this.handleSubmit} /> */}
 
         <div className="ui grid">
-<<<<<<< HEAD
-          {/* <div className="ui row"> */}
-          <div className="eleven wide column">
-            <VideoDetail video={this.state.selectedVideo} />
-          </div>
-          <div className="five wide column">
-            <VideoList
-              handleVideoSelect={this.handleVideoSelect}
-              videos={this.state.videos}
-            />
-
-            <Header />
-=======
           <div className="ui row">
             <div className="eleven wide column">
               <VideoDetail video={this.state.selectedVideo} />
             </div>
+            <Header />
             <div className="five wide column">
               <VideoList
                 handleVideoSelect={this.handleVideoSelect}
@@ -67,10 +56,11 @@ class App extends React.Component {
             </div>
             <div className="app__page">
               <Sidebar />
-              <RecommendedVideos />
+
+
             </div>
->>>>>>> 33daedd277ad0f75ced8d1955d085174d2a1e790
           </div>
+          <RecommendedVideos />
         </div>
       </div>
       // </div >
