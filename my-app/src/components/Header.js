@@ -8,7 +8,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import "../style/video.css";
 
 
-export default function Header() {
+function Header() {
     return (
         <div className="header">
 
@@ -36,3 +36,5 @@ export default function Header() {
         </div>
     );
 }
+
+export default Header;

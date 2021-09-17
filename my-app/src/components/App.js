@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container-fluid" style={{ marginTop: "1em" }}>
-        <Background />
+        {/* <Background /> */}
 
         <Searchbar handleFormSubmit={this.handleSubmit} />
 
@@ -45,7 +45,7 @@ class App extends React.Component {
 
           <div className="eleven wide column">
             <VideoDetail video={this.state.selectedVideo} />
-            {/* <Header /> */}
+            <Header />
           </div>
 
           <div className="five wide column">

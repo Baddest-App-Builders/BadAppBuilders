@@ -8,23 +8,23 @@
   max-width: 200px;
   max-height: 250px;
 }
-.header{
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.header__logo{
+.header__logo {
   height: 100px;
   object-fit: contain;
   margin-left: 20px;
 }
-.header__input{
+.header__input {
   display: flex;
   align-items: center;
-  width:40%;
-  border:1px solid aqua; 
+  width: 40%;
+  border: 1px solid aqua;
 }
-.header__icon{
+.header__icon {
   display: flex;
   align-items: center;
 }
@@ -33,7 +33,7 @@
   border: none;
 }
 .MuiSvgIcon-root {
-  color:aqua;
+  color: aqua;
   width: 1em;
   height: 1em;
   display: inline-block;
@@ -42,4 +42,3 @@
   flex-shrink: 0;
   user-select: none;
 }
-

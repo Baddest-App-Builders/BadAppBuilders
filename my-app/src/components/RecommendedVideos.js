@@ -37,7 +37,6 @@ function RecommendedVideos() {
         />
       </div>
       <div>
-        {" "}
         <VideoCard
           title="Documentary ~ Artificial Intelligence"
           views="281K views"
@@ -45,7 +44,7 @@ function RecommendedVideos() {
           channelImage="https://yt3.ggpht.com/ytc/AKedOLQqYpzI6n00m338TvICWtXEYOA_-keLAu1an9jU9g=s68-c-k-c0x00ffffff-no-rj"
           channel="metaRising"
           image="https://i.ytimg.com/an_webp/pQVYwz6u-zA/mqdefault_6s.webp?du=3000&sqp=CPCOiooG&rs=AOn4CLAgxCsTrLWauLLXwu2d6yfLFqgfWA"
-        />{" "}
+        />
       </div>
       <div>
         <VideoCard
