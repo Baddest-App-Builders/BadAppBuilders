@@ -1,12 +1,12 @@
 import React from "react";
-import "../style/RecommendedVideos.css";
-import "../style/app.css";
+import "../RecommendedVideos.css";
 import VideoCard from "./VideoCard";
 
 function RecommendedVideos() {
   return (
     <div className="recommendedVideos">
-      <div>
+      <h1>Recommended</h1>
+      <div className="recommendedVideos_videos">
         <VideoCard
           title="Tesla AI Day Highlights | Lex Fridman"
           views="450k Views"
@@ -15,8 +15,7 @@ function RecommendedVideos() {
           channel="Lex Fridman"
           image="https://i.ytimg.com/vi/ABbDB6xri8o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCt6xe65_De5xHUkv8lu80ZCbfhZg"
         />
-      </div>
-      <div>
+
         <VideoCard
           title="How To Think Like A Programmer"
           views="1.1M views"
@@ -25,8 +24,7 @@ function RecommendedVideos() {
           channel="Coding Tech"
           image="https://i.ytimg.com/vi/azcrPFhaY9k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5WVjmVhgYJJhORzWDU_iCWfJ47w"
         />
-      </div>
-      <div>
+
         <VideoCard
           title="Introducing iPhone 13 Pro"
           views="7.7M views"
@@ -35,8 +33,7 @@ function RecommendedVideos() {
           channel="Apple"
           image="https://i.ytimg.com/an_webp/XKfgdkcIUxw/mqdefault_6s.webp?du=3000&sqp=CMyBiooG&rs=AOn4CLBNcToNArjM2Ru0vAD2YJLG0q4brw"
         />
-      </div>
-      <div>
+
         <VideoCard
           title="Documentary ~ Artificial Intelligence"
           views="281K views"
@@ -45,8 +42,7 @@ function RecommendedVideos() {
           channel="metaRising"
           image="https://i.ytimg.com/an_webp/pQVYwz6u-zA/mqdefault_6s.webp?du=3000&sqp=CPCOiooG&rs=AOn4CLAgxCsTrLWauLLXwu2d6yfLFqgfWA"
         />
-      </div>
-      <div>
+
         <VideoCard
           title="How we need to remake the internet | Jaron Lanier"
           views="345K views"
@@ -55,8 +51,7 @@ function RecommendedVideos() {
           channel="Ted"
           image="https://i.ytimg.com/an_webp/KNOlqzMd2Zw/mqdefault_6s.webp?du=3000&sqp=CKCmiooG&rs=AOn4CLDyic6t-9Wn7CF5L3MXTP7YFfWHGg"
         />
-      </div>
-      <div>
+
         <VideoCard
           title="React Js Crash Course 2021"
           views="1.2 Million views"

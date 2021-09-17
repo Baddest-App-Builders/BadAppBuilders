@@ -1,5 +1,5 @@
-import React from 'react';
-import '../style/SidebarRow.css';
+import React from "react";
+import "../SidebarRow.css";
 import HomeIcon from "@material-ui/icons/Home";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
@@ -10,21 +10,13 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import DuoIcon from "@material-ui/icons/Duo";
 import MoreIcon from "@material-ui/icons/More";
 
-function SidebarRow({Icon, title}) {
-    return (
-      <div className="SidebarRow">
-        <HomeIcon />
-        <WhatshotIcon />
-        <SubscriptionsIcon />
-        <VideoLibraryIcon />
-        <HistoryIcon />
-        <PersonalVideoIcon />
-        <WatchLaterIcon />
-        <DuoIcon />
-        <MoreIcon />
-        <h2>{title}</h2>
-      </div>
-    );
+function SidebarRow({ selected, Icon, title }) {
+  return (
+    <div className={`SidebarRow ${selected && "selected"}`}>
+      <Icon className="SidebarRow__icon" />
+      <h2 className="SidebarRow__title">{title}</h2>
+    </div>
+  );
 }
 
 export default SidebarRow;
