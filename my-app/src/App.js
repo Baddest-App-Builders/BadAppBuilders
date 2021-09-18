@@ -7,18 +7,24 @@ import RecommendedVideos from "./components/RecommendedVideos";
 import Sidebar from "./components/Sidebar";
 import SidebarRow from "./components/SidebarRow";
 import "./Sidebar.css";
+import SearchPage from "./components/SearchPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
       <Router>
+        <Header />
         <Switch>
           <Route path="/Search/:searchTerm">
-            <h1>Search page</h1>
+            <div className="app__page">
+              <Sidebar />
+              < SearchPage />
+            </div>
+
           </Route>
           <Route path="/">
-            <Header />
+
             <div className="app__page">
               <Sidebar />
               <RecommendedVideos />
