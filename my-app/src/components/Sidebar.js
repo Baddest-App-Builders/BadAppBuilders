@@ -1,5 +1,5 @@
-import React from 'react';
-import SidebarRow from './SidebarRow';
+import React from "react";
+import SidebarRow from "./SidebarRow";
 import HomeIcon from "@material-ui/icons/Home";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
@@ -9,23 +9,28 @@ import PersonalVideoIcon from "@material-ui/icons/PersonalVideo";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import DuoIcon from "@material-ui/icons/Duo";
 import MoreIcon from "@material-ui/icons/More";
-import '../style/Sidebar.css';
+import "../Sidebar.css";
+import "../SidebarRow.css";
 
 function Sidebar() {
-    return (
-      <div className="sidebar">
-        <SidebarRow />
-       {/*} <SidebarRow Icon={HomeIcon} title="Home"/>
-        <SidebarRow Icon={WhatshotIcon} title="Trending"/>
-        <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions"/>
-        <SidebarRow Icon={VideoLibraryIcon} title="VideoLibrary"/>
-        <SidebarRow Icon={HistoryIcon} title="History"/>
-        <SidebarRow Icon={PersonalVideoIcon} title="PersonalVideo"/>  
-        <SidebarRow Icon={WatchLaterIcon} title="WatchLater"/>
-        <SidebarRow Icon={DuoIcon} title="Duo"/>
-    <SidebarRow Icon={MoreIcon} title="More"/>  */}
-      </div>
-    );
+  return (
+    <div className="sidebar">
+      <SidebarRow selected Icon={HomeIcon} title="Home" />
+      <SidebarRow Icon={WhatshotIcon} title="Trending" />
+      <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" />
+      <hr />
+      <SidebarRow Icon={VideoLibraryIcon} title="VideoLibrary" />
+      <SidebarRow Icon={HistoryIcon} title="History" />
+      <SidebarRow Icon={PersonalVideoIcon} title="PersonalVideo" />
+      <SidebarRow Icon={WatchLaterIcon} title="WatchLater" />
+      <SidebarRow Icon={DuoIcon} title="Duo" />
+      <SidebarRow Icon={MoreIcon} title="More" />
+      <hr />
+    </div>
+  );
 }
 
 export default Sidebar;
+
+//
+//

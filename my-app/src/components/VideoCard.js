@@ -1,15 +1,7 @@
 import React from "react";
-import { Avatar } from "@material-ui/core";
-import "../style/app.css";
-
-const VideoCard = ({
-  image,
-  title,
-  channel,
-  views,
-  channelImage,
-  timestamp,
-}) => {
+import Avatar from "@material-ui/core/Avatar";
+import "../components/videoCard.css";
+function VideoCard({ image, title, channel, views, channelImage, timestamp }) {
   return (
     <div className="videoCard">
       <img className="videoCard_thumbnail" src={image} alt="" />
@@ -25,6 +17,6 @@ const VideoCard = ({
       </div>
     </div>
   );
-};
+}
 
 export default VideoCard;

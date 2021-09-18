@@ -1,80 +1,59 @@
-import React from "react";
-import Searchbar from "./Searchbar";
-import youtube from "../apis/youtube";
-import VideoList from "./VideoList";
-import VideoDetail from "./VideoDetail";
-import Sidebar from "./Sidebar";
-import RecommendedVideos from "./RecommendedVideos";
-import Header from "./Header";
-import Background from "./Background";
-import "../style/app.css";
+import React from 'react';
+import SearchBar from './Searchbar';
+import youtube from '../apis/youtube';
+import VideoList from './VideoList';
+import VideoDetail from './VideoDetail';
+import Header from './Header';
+import MenuIcon from '@material-ui/icons/Menu';
 
 class App extends React.Component {
-  state = {
-    videos: [],
-    selectedVideo: null,
-    show: true,
-  };
-
-  handleSubmit = async (termFromSearchBar) => {
-    const response = await youtube.get("/search", {
-      params: {
-        q: termFromSearchBar,
-      },
-    });
-    console.log(Date());
-
-    this.setState({
-      videos: response.data.items,
-      show: false,
-    });
-  };
-
-  handleVideoSelect = (video) => {
-    this.setState({ selectedVideo: video });
-  };
-
-  render() {
-    return (
-      <div className="ui container-fluid" style={{ marginTop: "1em" }}>
-        {/* <Background /> */}
-
-        <Searchbar handleFormSubmit={this.handleSubmit} />
-
-        <div className="ui grid">
-
-          <div className="eleven wide column">
-            <VideoDetail video={this.state.selectedVideo} />
-            <Header />
-          </div>
-
-          <div className="five wide column">
-            <VideoList
-              handleVideoSelect={this.handleVideoSelect}
-              videos={this.state.videos}
-            />
-
-            <div className="ui row">
+    state = {
+        videos: [],
+        selectedVideo: null
+    }
 
 
 
-              <div id="video" className={this.state.show && "showVideo"}>
-                <RecommendedVideos />
 
-              </div>
+    handleSubmit = async (termFromSearchBar) => {
+        const response = await youtube.get('/search', {
+            params: {
+                q: termFromSearchBar
+            }
 
-              <div className="app__page"></div>
+        })
+        console.log(Date());
+
+        this.setState({
+            videos: response.data.items
+        })
+    };
+
+
+    handleVideoSelect = (video) => {
+        this.setState({ selectedVideo: video })
+    }
+
+    render() {
+        return (
+            <div className='ui container' style={{ marginTop: '1em' }}>
+                {/* <SearchBar handleFormSubmit={this.handleSubmit} /> */}
+                <div className='ui grid'>
+                    <div className="ui row">
+                        <div className="eleven wide column">
+                            <VideoDetail video={this.state.selectedVideo} />
+                        </div>
+                        <div className="five wide column">
+                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos} />
+                        </div>
+                        {/* <MenuIcon /> */}
+                        <Header />
+
+                    </div>
+                </div>
             </div>
-
-          </div>
-
-        </div>
-        <div>
-          <Sidebar />
-        </div>
-      </div>
-    );
-  }
+        )
+    }
 }
 
 export default App;
