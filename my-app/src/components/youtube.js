@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDKrGq19zry7GQKdvpL1azzOvPsqTJfLlQ",
@@ -10,7 +12,9 @@ const firebaseConfig = {
   appId: "1:529596374838:web:f9211df05671c7c90e9d97",
   measurementId: "G-B3Y882CY90",
 };
+firebase.initializeApp(firebaseConfig);
 
+export default firebase.auth();
 // import axios from "axios";
 // const KEY = "AIzaSyBOdVfrwOvCv5zyQNvGsa3hWUzrMRx488E";
 // //AIzaSyDahUmm6DW_GwjC3eMhfvRtEAr97qkxWEU';
