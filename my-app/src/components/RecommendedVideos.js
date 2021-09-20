@@ -39,7 +39,7 @@ function RecommendedVideos(props) {
 
   return (
     <div className="recommendedVideos">
-      <h1>Recommended</h1>
+
       <div className="recommendedVideos_videos">
         <ShowTrendingVideos />
         {/* <VideoCard

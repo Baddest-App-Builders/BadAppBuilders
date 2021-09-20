@@ -112,14 +112,14 @@ function App() {
             </div>
           </Route>
 
-          <Route exact path="/PersonalVideo">
+          <Route exact path="/Movies">
             <div className="app__page">
               <Sidebar />
               <RecommendedVideos query="Movies" />)
             </div>
           </Route>
 
-          <Route exact path="/WatchLater">
+          <Route exact path="/Rottentomatoesbestmovies2021">
             <div className="app__page">
               <Sidebar />
               <RecommendedVideos query="Rottentomatoesbestmovies2021" />)
@@ -127,7 +127,7 @@ function App() {
           </Route>
 
 
-          <Route exact path="/More">
+          <Route exact path="/Taylor Swift">
             <div className="app__page">
               <Sidebar />
               <RecommendedVideos query="Taylor Swift" />)
