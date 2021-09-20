@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from "react-query";
 import youtube from './apis/youtube';
 import { useQuery } from 'react-query'
-import { useEffect,useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 const queryClient = new QueryClient()
 
@@ -19,9 +19,9 @@ ReactDOM.render(
 
 
 
-<QueryClientProvider client={queryClient}>
-   <App  />
-</QueryClientProvider>,
+  <QueryClientProvider client={queryClient}>
+    <App />
+  </QueryClientProvider>,
   document.getElementById('root')
 );
 
