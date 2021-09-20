@@ -92,7 +92,7 @@ function App() {
               <RecommendedVideos query="trending" />)
             </div>
           </Route>
-          <Route exact path="/puppies">
+          <Route exact path="/Subscriptions">
             <div className="app__page">
               <Sidebar />
               <RecommendedVideos query="puppies" />)
@@ -109,6 +109,28 @@ function App() {
             <div className="app__page">
               <Sidebar />
               <RecommendedVideos query="history" />)
+            </div>
+          </Route>
+
+          <Route exact path="/PersonalVideo">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="Movies" />)
+            </div>
+          </Route>
+
+          <Route exact path="/WatchLater">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="Rottentomatoesbestmovies2021" />)
+            </div>
+          </Route>
+
+
+          <Route exact path="/More">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="Taylor Swift" />)
             </div>
           </Route>
 

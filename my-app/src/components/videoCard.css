@@ -2,6 +2,7 @@
   margin-bottom: 40px;
   width: 270px;
   z-index: 10;
+  
 }
 .videoCard_thumbnail {
   height: 140px;
@@ -9,6 +10,8 @@
   border: 1px solid aqua;
   z-index: 100;
 }
+
+
 
 .videoCard_info {
   display: flex;

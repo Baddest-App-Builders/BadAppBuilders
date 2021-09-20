@@ -18,14 +18,14 @@ function Sidebar() {
     <div className="sidebar">
       <Link to="/"><SidebarRow selected Icon={HomeIcon} title="Home" /></Link>
       <Link to="/trending"><SidebarRow Icon={WhatshotIcon} title="Trending" /></Link>
-      <Link to="/puppies"><SidebarRow Icon={SubscriptionsIcon} title="Puppies" /></Link>
+      <Link to="/puppies"><SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" /></Link>
       <hr />
       <Link to="/react"><SidebarRow Icon={VideoLibraryIcon} title="VideoLibrary" /></Link>
       <Link to="/history"><SidebarRow Icon={HistoryIcon} title="History" /></Link>
-      <SidebarRow Icon={PersonalVideoIcon} title="PersonalVideo" />
-      <SidebarRow Icon={WatchLaterIcon} title="WatchLater" />
+      <Link to="/Movies"> <SidebarRow Icon={PersonalVideoIcon} title="PersonalVideo" /></Link>
+      <Link to="/Rottentomatoesbestmovies2021"> <SidebarRow Icon={WatchLaterIcon} title="WatchLater" /></Link>
       <SidebarRow Icon={DuoIcon} title="Duo" />
-      <SidebarRow Icon={MoreIcon} title="More" />
+      <Link to="/Taylor Swift" ><SidebarRow Icon={MoreIcon} title="More" /></Link>
       <hr />
     </div>
   );

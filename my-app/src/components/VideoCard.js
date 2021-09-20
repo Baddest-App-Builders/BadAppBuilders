@@ -11,6 +11,7 @@ function VideoCard({ image, title, channel, views, channelImage, timestamp, vide
   const videoSrc = `https://www.youtube.com/embed/${videoId}`;
 
   return (
+
     <div className="videoCard">
       {/* <img className="videoCard_thumbnail" src={image} alt="" /> */}
       <div className='ui embed'>

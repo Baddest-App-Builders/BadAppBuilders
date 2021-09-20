@@ -2,6 +2,7 @@
   display: flex;
   padding: 10px 20px;
   align-items: center;
+  padding-block-start: 20px;
 }
 .SidebarRow__icon {
   color: aqua;
