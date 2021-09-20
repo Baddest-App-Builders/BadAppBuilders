@@ -37,3 +37,8 @@
   width: 30px !important;
   z-index: 10;
 }
+
+
+.videoCard {
+  padding: 30px;
+}

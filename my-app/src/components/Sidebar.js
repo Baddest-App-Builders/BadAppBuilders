@@ -9,18 +9,19 @@ import PersonalVideoIcon from "@material-ui/icons/PersonalVideo";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import DuoIcon from "@material-ui/icons/Duo";
 import MoreIcon from "@material-ui/icons/More";
+import { Link } from 'react-router-dom'
 import "../Sidebar.css";
 import "../SidebarRow.css";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <SidebarRow selected Icon={HomeIcon} title="Home" />
-      <SidebarRow Icon={WhatshotIcon} title="Trending" />
-      <SidebarRow Icon={SubscriptionsIcon} title="Subscriptions" />
+      <Link to="/"><SidebarRow selected Icon={HomeIcon} title="Home" /></Link>
+      <Link to="/trending"><SidebarRow Icon={WhatshotIcon} title="Trending" /></Link>
+      <Link to="/puppies"><SidebarRow Icon={SubscriptionsIcon} title="Puppies" /></Link>
       <hr />
-      <SidebarRow Icon={VideoLibraryIcon} title="VideoLibrary" />
-      <SidebarRow Icon={HistoryIcon} title="History" />
+      <Link to="/react"><SidebarRow Icon={VideoLibraryIcon} title="VideoLibrary" /></Link>
+      <Link to="/history"><SidebarRow Icon={HistoryIcon} title="History" /></Link>
       <SidebarRow Icon={PersonalVideoIcon} title="PersonalVideo" />
       <SidebarRow Icon={WatchLaterIcon} title="WatchLater" />
       <SidebarRow Icon={DuoIcon} title="Duo" />

@@ -15,7 +15,6 @@ import { useQuery } from "react-query";
 //import { useLayoutEffect,useMemo } from "react";
 import React, { useEffect, useState } from "react";
 import Background from "./components/Background";
-
 //var response = [];
 
 /*
@@ -65,6 +64,10 @@ import Background from "./components/Background";
 
 function App() {
   //when search search for term in database
+
+
+
+
   return (
     <div className="app">
       <Background />
@@ -77,12 +80,39 @@ function App() {
               <SearchPage />
             </div>
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <div className="app__page">
               <Sidebar />
-              <RecommendedVideos />)
+              <RecommendedVideos query="nasa" />)
             </div>
           </Route>
+          <Route exact path="/trending">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="trending" />)
+            </div>
+          </Route>
+          <Route exact path="/puppies">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="puppies" />)
+            </div>
+          </Route>
+          <Route exact path="/react">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="react tutorials" />)
+            </div>
+          </Route>
+
+          <Route exact path="/history">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos query="history" />)
+            </div>
+          </Route>
+
+
         </Switch>
       </Router>
     </div>

@@ -1,13 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../RecommendedVideos.css";
 import VideoCard from "./VideoCard";
+import youtube from "../apis/youtube";
 
-function RecommendedVideos() {
+
+function RecommendedVideos(props) {
+
+  const [videos, setVideos] = useState([])
+  console.log(props.query, '=-=-=-=-')
+  useEffect(async () => {
+
+    const response = await youtube.get("/search", {
+      params: { q: props.query },
+    });
+    const data = await response.data;
+
+    console.log(data, '???')
+    setVideos(data.items)
+  }, [props.query])
+
+
+  const ShowTrendingVideos = () => {
+    return videos.map(eachVideo => {
+      return (
+        <VideoCard
+          videoId={eachVideo.id.videoId}
+          title={eachVideo.snippet.title}
+          views={`${Math.round(Math.random() * 450)}k Views`}
+          timestamp={`${Math.round(Math.random() * 3)} weeks ago`}
+          // channelImage="https://yt3.ggpht.com/ytc/AKedOLRFlH5XnTHG1Qcz8nNycMIUSou2kuE-EQzrI8LYzY4=s68-c-k-c0x00ffffff-no-rj"
+          channel={eachVideo.snippet.channelTitle}
+          image={eachVideo.snippet.thumbnails.high.url}
+        />
+      )
+    })
+  }
+
+
   return (
     <div className="recommendedVideos">
       <h1>Recommended</h1>
       <div className="recommendedVideos_videos">
-        <VideoCard
+        <ShowTrendingVideos />
+        {/* <VideoCard
           title="Tesla AI Day Highlights | Lex Fridman"
           views="450k Views"
           timestamp="3 weeks ago"
@@ -67,7 +102,7 @@ function RecommendedVideos() {
           channelImage="https://i.ytimg.com/an_webp/8cbPBle1ME0/mqdefault_6s.webp?du=3000&sqp=CJukoooG&rs=AOn4CLDzDL6VS3zwQB2MPXJlKOueGdtM2g"
           channel="Nasa"
           image="https://i.ytimg.com/an_webp/8cbPBle1ME0/mqdefault_6s.webp?du=3000&sqp=CJukoooG&rs=AOn4CLDzDL6VS3zwQB2MPXJlKOueGdtM2g"
-        />
+        /> */}
       </div>
     </div>
   );

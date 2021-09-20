@@ -71,9 +71,9 @@ const Header = (props) => {
             type="text"
           />
         </form>
-        <Link to={`/search/${inputSearch}`}>
-          <SearchIcon className="header__inputButton" />
-        </Link>
+        {/* <Link to={`/Search/${inputSearch}`}> */}
+        <SearchIcon onClick={handleSubmit} className="header__inputButton" />
+        {/* </Link> */}
       </div>
       <div className="header__icons">
         <VideoCallIcon className="header__icon" />

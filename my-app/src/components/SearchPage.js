@@ -10,7 +10,7 @@ import { withRouter } from "react-router";
 const SearchPage = (prevProps) => {
 
 
-    
+
     //return <div className='ui relaxed divided list'>{renderedVideos}</div>;
 
     return (
@@ -22,8 +22,7 @@ const SearchPage = (prevProps) => {
 
             </div>
             <hr />
-            {console.log(prevProps.location.videosState[0])}
-            {console.log(prevProps.location.videosState[0].snippet.description)}
+
             <ChannelRow
                 image='https://www.24newshd.tv/uploads/facebook_post_images/2020-10-26/facebook_post_image_1603699901.jpg'
                 channel='Tylor Swift'
@@ -36,22 +35,22 @@ const SearchPage = (prevProps) => {
 
             <hr />
 
-       {(prevProps.location.videosState).map((videoItem) => (
-            
-           <VideoRow key={videoItem.id.videoId} 
-                views="15M"
-                subs="5M"
-                description={videoItem.snippet.description}
-                timestamp={videoItem.snippet.publishTime}
-                channel={videoItem.snippet.channleTitle}
-                title={videoItem.snippet.title}
-                videoId={videoItem.id.videoId}
-            />
-        ))}
+            {(prevProps.location.videosState).map((videoItem) => (
+
+                <VideoRow key={videoItem.id.videoId}
+                    views="15M"
+                    subs="5M"
+                    description={videoItem.snippet.description}
+                    timestamp={videoItem.snippet.publishTime}
+                    channel={videoItem.snippet.channleTitle}
+                    title={videoItem.snippet.title}
+                    videoId={videoItem.id.videoId}
+                />
+            ))}
 
 
-           
-           
+
+
         </div>
     )
 }
