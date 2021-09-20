@@ -1,10 +1,18 @@
 import React from 'react';
 import "./videoRow.css";
 
-function VideoRow({ views, subs, description, timestamp, channel, title, image }) {
+function VideoRow({ views, subs, description, timestamp, channel, title, videoId }) {
+    
+    const videoSrc = `https://www.youtube.com/embed/${videoId}`;
+
+    console.log(videoId);
     return (
         <div className="videoRow">
-            <img src={image} alt="" />
+
+           <div className='ui embed'>
+                <iframe src={videoSrc} allowFullScreen title='Video player' />
+            </div>
+
             <div className="videoRow__text">
                 <h3>{title}</h3>
                 <p className="videoRow__headline">
