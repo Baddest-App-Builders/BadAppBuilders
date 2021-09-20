@@ -60,6 +60,14 @@ function RecommendedVideos() {
           channel="Traversy Media"
           image="https://i.ytimg.com/vi/w7ejDZ8SWv8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzn-mJ6EYgNMWXlfwSh2Ba-yglMg"
         />
+        <VideoCard
+          title="Preparing the Space Station for a Future Power Boost on This Week @NASA – September 17, 2021"
+          views="50,255 views"
+          timestamp="2 days ago"
+          channelImage="https://i.ytimg.com/an_webp/8cbPBle1ME0/mqdefault_6s.webp?du=3000&sqp=CJukoooG&rs=AOn4CLDzDL6VS3zwQB2MPXJlKOueGdtM2g"
+          channel="Nasa"
+          image="https://i.ytimg.com/an_webp/8cbPBle1ME0/mqdefault_6s.webp?du=3000&sqp=CJukoooG&rs=AOn4CLDzDL6VS3zwQB2MPXJlKOueGdtM2g"
+        />
       </div>
     </div>
   );
