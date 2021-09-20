@@ -3,10 +3,18 @@ import ChannelRow from "./ChannelRow";
 import TuneOutlinedIcon from "@material-ui/icons/TuneOutlined";
 import "./SearchPage.css";
 import VideoRow from "./videoRow";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { withRouter } from "react-router";
+
+const SearchPage = (prevProps) => {
 
 
-function SearchPage() {
+    
+    //return <div className='ui relaxed divided list'>{renderedVideos}</div>;
+
     return (
+
         <div className="SearchPage">
             <div className='SearchPage__filter'>
                 <TuneOutlinedIcon />
@@ -14,6 +22,8 @@ function SearchPage() {
 
             </div>
             <hr />
+            {console.log(prevProps.location.videosState[0])}
+            {console.log(prevProps.location.videosState[0].snippet.description)}
             <ChannelRow
                 image='https://www.24newshd.tv/uploads/facebook_post_images/2020-10-26/facebook_post_image_1603699901.jpg'
                 channel='Tylor Swift'
@@ -26,65 +36,23 @@ function SearchPage() {
 
             <hr />
 
-            <VideoRow
+       {(prevProps.location.videosState).map((videoItem) => (
+            
+           <VideoRow key={videoItem.id.videoId} 
                 views="15M"
                 subs="5M"
-                description="Cute baby animals Videos Compilation cutest moment "
-                timestamp="59 seconds ago"
-                channel="https://www.youtube.com/channel/UCerazDNo8vEcVTbBajMAoFQ"
-                title="Cutest Puppies City"
-                image="https://2.bp.blogspot.com/-WznIJmuH9B0/UXeOi9s3ykI/AAAAAAAAAoI/mekeFb7eO5Q/s1600/Merlin.jpg"
+                description={videoItem.snippet.description}
+                timestamp={videoItem.snippet.publishTime}
+                channel={videoItem.snippet.channleTitle}
+                title={videoItem.snippet.title}
+                videoId={videoItem.id.videoId}
             />
+        ))}
 
-            <VideoRow
-                views="15M"
-                subs="5M"
-                description="Cute baby animals Videos Compilation cutest moment "
-                timestamp="59 seconds ago"
-                channel="https://www.youtube.com/channel/UCerazDNo8vEcVTbBajMAoFQ"
-                title="Cutest Puppies City"
-                image="https://2.bp.blogspot.com/-WznIJmuH9B0/UXeOi9s3ykI/AAAAAAAAAoI/mekeFb7eO5Q/s1600/Merlin.jpg"
-            />
 
-            <VideoRow
-                views="15M"
-                subs="5M"
-                description="Cute baby animals Videos Compilation cutest moment "
-                timestamp="59 seconds ago"
-                channel="https://www.youtube.com/channel/UCerazDNo8vEcVTbBajMAoFQ"
-                title="Cutest Puppies City"
-                image="https://2.bp.blogspot.com/-WznIJmuH9B0/UXeOi9s3ykI/AAAAAAAAAoI/mekeFb7eO5Q/s1600/Merlin.jpg"
-            />
-            <VideoRow
-                views="15M"
-                subs="5M"
-                description="Cute baby animals Videos Compilation cutest moment "
-                timestamp="59 seconds ago"
-                channel="https://www.youtube.com/channel/UCerazDNo8vEcVTbBajMAoFQ"
-                title="Cutest Puppies City"
-                image="https://2.bp.blogspot.com/-WznIJmuH9B0/UXeOi9s3ykI/AAAAAAAAAoI/mekeFb7eO5Q/s1600/Merlin.jpg"
-            />
-
-            <VideoRow
-                views="15M"
-                subs="5M"
-                description="Cute baby animals Videos Compilation cutest moment "
-                timestamp="59 seconds ago"
-                channel="https://www.youtube.com/channel/UCerazDNo8vEcVTbBajMAoFQ"
-                title="Cutest Puppies City"
-                image="https://2.bp.blogspot.com/-WznIJmuH9B0/UXeOi9s3ykI/AAAAAAAAAoI/mekeFb7eO5Q/s1600/Merlin.jpg"
-            />
-
-            <VideoRow
-                views="15M"
-                subs="5M"
-                description="Cute baby animals Videos Compilation cutest moment "
-                timestamp="59 seconds ago"
-                channel="https://www.youtube.com/channel/UCerazDNo8vEcVTbBajMAoFQ"
-                title="Cutest Puppies City"
-                image="https://2.bp.blogspot.com/-WznIJmuH9B0/UXeOi9s3ykI/AAAAAAAAAoI/mekeFb7eO5Q/s1600/Merlin.jpg"
-            />
+           
+           
         </div>
     )
 }
-export default SearchPage;
+export default withRouter(SearchPage);

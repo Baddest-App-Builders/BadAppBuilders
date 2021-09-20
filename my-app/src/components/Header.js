@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import { Component } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import VideoCallIcon from "@material-ui/icons/VideoCall";
@@ -8,24 +9,52 @@ import youtube from '../apis/youtube';
 import NotificationsIcon from "@material-ui/icons/Notifications";
 // import "../style/video.css";
 import { Link } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
+import { withRouter } from "react-router";
+//import  { Redirect } from "react-router-dom";
+import { useQuery } from 'react-query'
 
 
-function Header() {
+const  Header = (props) => {
+    
+    const [inputSearch, setInputSearch] = useState("");
+    //const [videos, setVideos] = useState(Object);
 
-    const handleSubmit = async (termFromSearchBar) => {
-        const response = await youtube.get('/search', {
-            params: {
-                q: termFromSearchBar
-            }
+    //const history = useHistory();
+    
+    
 
-        })
-        console.log("i am inside submithandler")
-        // this.setState({
-        //             videos: response.data.items
-        //         })        
+  
+
+    
+   const  youtubeCallApi =   async () => {
+        const response = await youtube.get('/search', {params: { q: inputSearch }});
+        const data  = await response.data;
+        
+        //console.log(typeof(Object.values(response.data.items)));
+        //setVideos(response.data.items);
+      //  console.log(videos); 
+        props.history.push({pathname: `/Search/${inputSearch}`, videosState:   response.data.items   });
+              
+   };
+
+   const { status, data, error, refetchData } = useQuery("repoData", youtubeCallApi,{ refetchOnWindowFocus: false, enabled: false });
+   
+   const handleSubmit = event => {
+        event.preventDefault();
+        console.log("inside submit handler");
+        console.log("Search term = " + inputSearch);
+
+        
+        youtubeCallApi();
+        //refetchData();
+       
+
     };
 
-    const [inputSearch, setInputSearch] = useState("");
+  
+  
+
     return (
         <div className="header">
             <div className="header__left">
@@ -65,4 +94,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default withRouter(Header);
