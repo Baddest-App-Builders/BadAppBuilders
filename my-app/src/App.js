@@ -9,13 +9,14 @@ import SidebarRow from "./components/SidebarRow";
 import "./Sidebar.css";
 import SearchPage from "./components/SearchPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import firebase from "./components/youtube";
-function App() {
-  const ref = firebase.firestore().collection("");
+import Particles from "react-particles-js";
+import Background from "./components/Background";
 
+function App() {
   //when search search for term in database
   return (
     <div className="app">
+      <Background />
       <Router>
         <Header />
         <Switch>
