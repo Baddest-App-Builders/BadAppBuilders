@@ -1,7 +1,7 @@
 import "./Header.css";
 import "./Sidebar.css";
 import "./app.css";
-// import Background from "./components/Background";
+import Searchbar from "./components/Searchbar";
 import Header from "./components/Header";
 import RecommendedVideos from "./components/RecommendedVideos";
 import Sidebar from "./components/Sidebar";
@@ -9,7 +9,6 @@ import SidebarRow from "./components/SidebarRow";
 import "./Sidebar.css";
 import SearchPage from "./components/SearchPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Particles from "react-particles-js";
 import Background from "./components/Background";
 
 function App() {
@@ -19,6 +18,7 @@ function App() {
       <Background />
       <Router>
         <Header />
+        <Searchbar />
         <Switch>
           <Route path="/Search/:searchTerm">
             <div className="app__page">
